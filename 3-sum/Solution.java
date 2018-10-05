@@ -23,14 +23,14 @@ int  q[]=new int[n];
 			{
 				 sum=q[j]+q[k];
 				 k1 = Arrays.binarySearch(q, -sum);
-				if(k1>j)
+				if(k1>k)
 				{
 	            count++;
 					
 				}
 			}
 		}
-		System.out.println(count/2);
+		System.out.println(count);
 	}
 	
 
