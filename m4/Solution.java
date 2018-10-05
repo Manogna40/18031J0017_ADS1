@@ -1,12 +1,16 @@
+
+
+
+
 import java.util.Scanner;
 
-public class Solution{
-	int[] in;
+public class Solution {
+	char[] in;
 	int len;
 	int top=-1;
 	Solution(int n)
 	{
-		in=new int[n];
+		in=new char[n];
 		this.len=n;
 	}
 	boolean isEmpty(int t)
@@ -18,64 +22,122 @@ public class Solution{
 		return t==this.len;
 	}
 	
-	public void push(int n)
+	public void push(char n)
 	{
 		if(!isfull(this.top))
 		{
-		in[++this.top]=n;
+		in[++top]=n;
 		}
-		else
-		{
-			System.out.println("Stack is full!");
-		}
+		
 	}
-	public int pop()
+	public char pop()
 	{
-		if(!isEmpty(this.top))
+		if(!isEmpty(top))
 		{
-			return in[this.top--];
+			return in[top--];
 		}
 		else
 		{
-			System.out.println("Stack is empty !");
+			//System.out.println("Stack is empty !");
 			return 0;
 		}
 	}
 public static void main(String args[])
-{Scanner s=new Scanner(System.in);
-String a =s.nextLine() ;
+{Scanner s=new Scanner(System.in);String a = null;boolean boo=false;int nuu=0;String b[] = null ;int i11=0;
+nuu=s.nextInt();
+while(s.hasNext())
+{
+	
+	//b=new String[nuu];
+// b[i11]
+	a=s.nextLine();
+// i11++;
 
-int num=a.length();
-String b[] = a.split(" ");
-int n3=0;
-	Solution stack=new Solution(num);
-	for(int i = 0;i<b.length;i++)
-	{
-	if(b[i].equals("*"))
-	{
-		int n1=stack.pop();
-		int n2=stack.pop();
-		n3=n1*n2;
-		stack.push(n3);
-		
-	}
-	else if(b[i].equals("+"))
-	{
-		int n1=stack.pop();
-		int n2=stack.pop();
-		n3=n1+n2;
-		stack.push(n3);
-		
-	}
-	else
-	{
-		int m=Integer.parseInt(b[i]);
-		
-		stack.push(m);
-	}
-	}
 
-	System.out.println(stack.pop());
+	Solution p=new Solution(a.length());
+
+
+char ch;
+
+	for(int j = 0;j<a.length();j++)
+	{
+		char c1=a.charAt(j);
+		if(c1=='{' )
+		{
+			p.push(c1);
+			}
+		else if( c1=='(')
+		{
+			p.push(c1);
+		}
+		else if( c1=='[')
+		{
+			p.push(c1);
+		}
+		else if( c1==')')
+		{
+			ch=p.pop();
+			if(ch=='(')
+			{
+				boo=true;
+			}
+			else
+			{
+				boo=false;
+				
+			}
+		}
+		else if( c1==']')
+		{
+			ch=p.pop();
+			if(ch=='[')
+			{
+				boo=true;
+			}
+			else
+			{
+				boo=false;
+				
+			}
+		}
+		else if( c1=='}')
+		{
+			ch=p.pop();
+			if(ch=='{')
+			{
+				boo=true;
+			}
+			else
+			{
+				boo=false;
+			
+			}
+		}
+		if(boo==false)
+		{
+			break;
+		}
+		
+
+	
+	}
+	
+
+
+if(boo==false)
+{
+	
+	System.out.println("NO");
+	boo=true;
 }
+else
+{
+	System.out.println("YES");
+
+	}
+
+	}
+
 }
 
+}
