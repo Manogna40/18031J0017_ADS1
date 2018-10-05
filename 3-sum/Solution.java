@@ -30,7 +30,7 @@ int  q[]=new int[n];
 				}
 			}
 		}
-		System.out.println(count);
+		System.out.println(count/2);
 	}
 	
 
