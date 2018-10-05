@@ -8,7 +8,7 @@ public class Solution{
 	public static void main(String[] args) {Scanner sc = new Scanner(System.in);
 	int count=0;
 	int i=0,j,k,l,k1=0,sum;
-	System.out.println("enter size");
+	//System.out.println("enter size");
 	int n=sc.nextInt();
 int  q[]=new int[n];
 
