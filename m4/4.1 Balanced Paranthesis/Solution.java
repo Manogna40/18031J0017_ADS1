@@ -1,143 +1,133 @@
 
 
-
-
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
-public class Solution {
-	char[] in;
-	int len;
-	int top=-1;
-	Solution(int n)
+class Node
+{
+
+	public char item;
+	public Node next;
+	Node(char item)
 	{
-		in=new char[n];
-		this.len=n;
-	}
-	boolean isEmpty(int t)
-	{
-		return t==-1;
-	}
-	boolean isfull(int t)
-	{
-		return t==this.len;
+		this.item=item;
+		this.next=null;
 	}
 	
-	public void push(char n)
+}
+class Paranthesis
+{
+	private Node first=null;
+	public boolean isEmpty()
 	{
-		if(!isfull(this.top))
-		{
-		in[++top]=n;
-		}
-		
+		return first==null;
 	}
-	public char pop()
+	public void push(char c)
 	{
-		if(!isEmpty(top))
+		Node n=new Node(c);
+		if(first==null)
 		{
-			return in[top--];
+			first=n;
 		}
 		else
 		{
-			//System.out.println("Stack is empty !");
-			return 0;
-		}
-	}
-public static void main(String args[])
-{Scanner s=new Scanner(System.in);String a = null;boolean boo=false;int nuu=0;String b[] = null ;int i11=0;
-nuu=s.nextInt();
-while(s.hasNext())
-{
-	
-	//b=new String[nuu];
-// b[i11]
-	a=s.nextLine();
-// i11++;
-
-
-	Solution p=new Solution(a.length());
-
-
-char ch;
-
-	for(int j = 0;j<a.length();j++)
-	{
-		char c1=a.charAt(j);
-		if(c1=='{' )
-		{
-			p.push(c1);
-			}
-		else if( c1=='(')
-		{
-			p.push(c1);
-		}
-		else if( c1=='[')
-		{
-			p.push(c1);
-		}
-		else if( c1==')')
-		{
-			ch=p.pop();
-			if(ch=='(')
-			{
-				boo=true;
-			}
-			else
-			{
-				boo=false;
-				
-			}
-		}
-		else if( c1==']')
-		{
-			ch=p.pop();
-			if(ch=='[')
-			{
-				boo=true;
-			}
-			else
-			{
-				boo=false;
-				
-			}
-		}
-		else if( c1=='}')
-		{
-			ch=p.pop();
-			if(ch=='{')
-			{
-				boo=true;
-			}
-			else
-			{
-				boo=false;
-			
-			}
-		}
-		if(boo==false)
-		{
-			break;
+			n.next=first;
+			first=n;
 		}
 		
-
-	
+	}public char pop()
+	{
+		char item = 0;
+		if(first!=null)
+		{
+			item=first.item;
+			first=first.next;
+			
+		}
+		return item;
 	}
-	
-
-
-if(boo==false)
-{
-	
-	System.out.println("NO");
-	boo=true;
 }
-else
+class Paran
 {
-	System.out.println("YES");
-
+	Paranthesis pa=new Paranthesis();
+	char ch;
+	boolean b=true;
+	
+	 public Paran(String s)
+	{
+   //for(int j=0;j<s.length();j++)
+	//{
+	for(int i=0;i<s.length();i++)
+	{
+		char c=s.charAt(i);
+		if(c=='('||c=='{'||c=='[')
+		{
+			pa.push(c);
+		}
+		else if(c=='}'||c==']'||c==')')
+		{
+			if(pa.isEmpty())
+			{
+				System.out.println("NO");
+				return;
+			}
+			ch=pa.pop();
+			boolean t=isMatch(ch,c);
+			if(t==false)
+			{
+				System.out.println("NO");
+				return;
+			}
+		}	
+	}
+	  
+	
+	  if(!pa.isEmpty())
+	       {
+	    	   System.out.println("NO");
+	       }
+	       else
+		   System.out.println("YES");
+		   
+	   		
+		
 	}
 
+	private boolean isMatch(char ch2, char c) {
+		if(ch=='[' && c==']')
+		{
+			return true;
+		}
+		else if(ch=='{' && c=='}')
+		{
+			return true;
+		}
+		else if(ch=='(' && c==')')
+		{
+		return true;
+		}
+		else
+		{
+			return false;
+		}
+		
 	}
-
 }
+public class Solution {
+
+	public static void main(String[] args) throws IOException {
+		 BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+		int s;
+		s=Integer.parseInt(br.readLine());
+		//System.out.println("string"+s);
+		
+		for(int i=0;i<s;i++)
+		{
+			Paran p1=new Paran(br.readLine());
+		}
+      
+	}
 
 }
