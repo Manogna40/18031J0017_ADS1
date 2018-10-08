@@ -1,0 +1,42 @@
+//P.Manogna
+//18031J0017
+
+1.(0 1 0 0 1 0)
+
+
+2.If “-” perform dequeue else enqueue each word.
+Playing Cricket - is - a hobby - - of - - mentor - deepak
+
+push : playing 
+push :Cricket
+pop :playing 
+push :is
+pop :Cricket
+push :a
+push :hobby 
+pop :is
+pop :a
+push :of
+pop :hobby 
+pop :of
+push:mentor 
+pop:mentor 
+push :deepak
+elements in stack are: deepak
+
+3.b,c
+
+4.0
+
+5.sizes{1,2,1,2,1,0}
+
+6.2 log(N)
+
+7.N
+
+8.N
+
+9.N^2
+
+10.0
+
