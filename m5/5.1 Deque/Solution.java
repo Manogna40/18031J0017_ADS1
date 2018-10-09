@@ -129,7 +129,7 @@ public void display()
 	Node temp=head;
 	if(head==null)
 	{
-		System.out.println("there are no elements to display");
+		System.out.println("Deck is empty");
 	}
 	else
 	{
