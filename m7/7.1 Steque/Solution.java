@@ -26,13 +26,19 @@ for(i=0;i<=n;i++)
 			case "push":
 		                     l.pushfront(Integer.parseInt(st1[1]));
 		                     l.display();
+
+	System.out.println();
 			                 break;
 			case "enqueue":
 		                     l.pushend(Integer.parseInt(st1[1]));   
 		                     l.display();
+
+	System.out.println();
 		                     break;
 			case "pop":l.popfront();
 							l.display();
+
+	System.out.println();
 			                 break;
 			//default:break;
 		   
@@ -119,7 +125,6 @@ public void display()
 		System.out.print(", ");
 	}
 	//System.out.print("]");
-	System.out.println();
 	}
 }
 public void pushfront(int a)
