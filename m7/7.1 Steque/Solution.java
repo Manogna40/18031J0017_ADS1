@@ -46,7 +46,7 @@ for(i=0;i<=n;i++)
 			}
 			
 		}while(s.hasNext() && st.length()!=0);
-System.out.println();
+//System.out.println();
 	
 
 }
@@ -111,7 +111,7 @@ public void display()
 	Node temp=head;
 	if(head==null)
 	{
-		System.out.println("Steque is empty.");
+		System.out.print("Steque is empty.");
 	}
 	else
 	{
