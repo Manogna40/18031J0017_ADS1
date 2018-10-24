@@ -1,0 +1,9 @@
+for triangle(3) :6
+
+for triangle(2) :3
+
+for triangle(6) :21
+
+for triangle(4) :10
+
+for triangle(7) :28

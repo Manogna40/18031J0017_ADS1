@@ -1,0 +1,9 @@
+for parenBit("xyz(abc)123") :(abc)
+
+for parenBit("(xy)1") :(xy)
+
+for parenBit("hello(not really)there") :(not really)
+
+for parenBit("()") :()
+
+for parenBit("res (ipsa) loquitor") :(ipsa)

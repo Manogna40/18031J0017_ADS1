@@ -1,0 +1,9 @@
+for count(717) :2
+
+for count(7) :1
+
+for count(123) :0
+
+for count(47571) :2
+
+for count(99999) :0

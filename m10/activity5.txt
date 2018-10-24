@@ -1,0 +1,9 @@
+for endX("xxre") :rexx
+
+for endX("xxhixx") :hixxxx
+
+for endX("xx") :xx
+
+for endX("bxx") :bxx
+
+for endX("bxax") :baxx
