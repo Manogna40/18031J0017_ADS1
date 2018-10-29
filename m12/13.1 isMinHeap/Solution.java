@@ -27,8 +27,8 @@ public class Solution {
 		int n1=s.nextInt();
         String s21[]=new String[n1];
         String s011=s.nextLine();
-        
-        for(int i = 0;s.hasNext();i++)
+
+for(int i = 0;s.hasNext();i++)
         {
       	 String s3=s.next();
       
@@ -117,8 +117,8 @@ class Minheap
 		int c=0;
 		for(int i = 0;i<arr.length-1;)
 		{
-			double d1=(double)Integer.parseInt(arr[i]);
-			double d2=(double)Integer.parseInt(arr[i+1]);
+			double d1=(double)Double.parseDouble(arr[i]);
+			double d2=(double)Double.parseDouble(arr[i+1]);
 			if(d1<=d2)
 			{
 				i++;
