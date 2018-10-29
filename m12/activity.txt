@@ -1,0 +1,33 @@
+blanks-1
+1.1
+2.k/2
+3.k
+4.k
+5.k/2
+6.k/2
+
+blanks-2
+1.N
+2.2*k
+3.N
+4.j
+5.j+1
+6.j++
+7.k
+8.j
+9.k
+10.j
+11.j
+
+
+blanks-3
+1.AEEIMORRSST
+2.I,E
+3.O
+
+Learning by doing-1
+ R R P O T Y I I U Q E U 
+elemts in pq are E
+
+learning by doing 2
+yes,because root nodes will have min values when compared to their chid node
