@@ -18,7 +18,7 @@ class QuickSort
   {++i;
 	 Student m=(Student) arr.get(i);
 	  
-	  while((comparable(m,v))>0)
+	  while((comparable(m,v)))
 	  {
 		  if(i==high)break;;
 		  ++i;
@@ -26,7 +26,7 @@ class QuickSort
 	  }
 	  --j;
 	  Student m1=(Student) arr.get(j);
-	  while(((comparable(v,m1)))>0)
+	  while(((comparable(v,m1))))
 	  {
 		  if(j==low)break;
 		  --j;
@@ -71,82 +71,66 @@ class QuickSort
        
 
     } 
-    public int comparable(Student a,Student b)
-    {
-    	if((a.total).equals(b.total))
-    	{
-    		if(a.s3.equals(b.s3)) {
-    			if(a.s2.equals(b.s3))
-    			{String[] s1=new String[3];
-    			String[] s2=new String[3];
-    			s1=a.dob.split("-");
-    			s2=b.dob.split("-");
-    			
-    				if(s1[2].compareTo(s2[2])==0)
-    				{
-    					if(s1[1].compareTo(s2[1])==0)
-    							{
-    						if(s1[0].compareTo(s2[0])==0)
-    						{
-    							return -1;
-    						}
-    						else
-    						{
-    							return 0;
-    						}
-    							}
-    					else if(s1[1].compareTo(s2[1])>0)
-    					{
-    						
-    						return -1;
-						}
-						else
-						{
-							return 0;
-						}
-    				}
-    				else if(s1[2].compareTo(s2[2])>0)
+    public boolean comparable(Student a,Student b)
+    {int a1=(int)Integer.parseInt(a.total);
+    int b1=Integer.parseInt(b.total);
+    int a11=Integer.parseInt(a.s3);
+    int b11=Integer.parseInt(b.s3);
+    int a111=Integer.parseInt(a.s2);
+    int b111=Integer.parseInt(b.s2);
+    	if(a1==b1)
+		{
+			if(a11==b11)
+			{
+				if(a111==b111)
+				{
+					if(dobcomparision(a.dob,b.dob)<0)
 					{
 						
-						return -1;
+						return false;
 					}
-					else
-					{
-						return 0;
-					}
-    			}
-    			else if(a.s2.compareTo(b.s2)>0) {
-    				return -1;
-					
+					return true;
 				}
-				else
-				{
-					return 1;
-				}
-    			
-    		}
-    		else if(a.s3.compareTo(b.s3)>0)
-    		{
-    			
-    			return -1;
 				
-			}
+				
+				else if(a111<b111)
+					return false;
+					else
+						return true;	
+				}
+			else if(a11<b11)
+				return false;
 			else
-			{
-				return 1;
+				return true;
+				}
+		else if(a1<b1)
+			return false;
+			else 
+			return true;
 			}
-    	}
-    	else if(a.total.compareTo(b.total)>0)
-		{
-			
-			return -1;
-			
-		}
-		else
-		{
-			return 1;
-		}
     	
+    public int dobcomparision(String a,String b)
+    {
+    	String[] a1=a.split("-");
+		String[] b1=b.split("-");
+		if(Integer.parseInt(a1[2])==Integer.parseInt(b1[2]))
+		{
+			if(Integer.parseInt(a1[1])==Integer.parseInt(b1[1]))
+			{
+				if(Integer.parseInt(a1[0])>Integer.parseInt(b1[0]))
+					return 1;
+				else
+					return -1;
+			}
+			if(Integer.parseInt(a1[1])>Integer.parseInt(b1[1]))
+				return 1;
+			else
+				return -1;
+		}
+		if(Integer.parseInt(a1[2])>Integer.parseInt(b1[2]))
+			return 1;
+		else
+			return -1;	
     }
     
 }

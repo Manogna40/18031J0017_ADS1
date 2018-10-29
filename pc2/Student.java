@@ -11,7 +11,7 @@ public class Student {
 	{
 		
 	}
-	Student(String total,String s3,String s2,String s1,String dob,String name)
+	Student(String name,String dob,String s1,String s2,String s3,String total)
 	{
 		this.total=total;
 		this.s3=s3;
