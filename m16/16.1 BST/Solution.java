@@ -141,6 +141,6 @@ public static void main(String arg[])
 	}
 	
 	
-	bst.display();
+	//bst.display();
 }
 }
